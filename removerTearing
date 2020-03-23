@@ -1,0 +1,31 @@
+ 
+Log como root.
+
+    sudo -i
+
+
+Crie o arquivo de configuração do modulo nvidia-drm.
+
+    nano /etc/modprobe.d/nvidia-drm-nomodeset.conf
+
+
+Cole a linha abaixo no editor de texto nano aberto.
+
+    options nvidia-drm modeset=1
+
+
+Salve teclando Ctrl + x tecle s e tecle Enter para fechar.
+
+Atualize a imagem do initramfs.
+
+    update-initramfs -u
+
+
+Reinicie o computador para a nova configuração ser carregada.
+
+    reboot
+
+
+Confira se a configuração está funcionando, a resposta deve ser Y.
+
+    sudo cat /sys/module/nvidia_drm/parameters/modeset
