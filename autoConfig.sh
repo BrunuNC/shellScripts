@@ -15,7 +15,6 @@ echo ""
 echo ""
 
 echo "LINUX UBUNTU"
-echo "Author: Bruno Nunes"
 echo "System: $system"
 echo "Architecture: $arch"
 echo "Home: $HOME"
