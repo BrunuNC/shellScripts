@@ -1,0 +1,9 @@
+
+ sudo mv "pasta JDK" /opt/
+ entre na pasta "opt"
+ sudo tee /etc/profile.d/jdk13env.sh <<EOF
+ export JAVA_HOME=/usr/lib/jvm/jdk-14.0.1/ 
+ export PATH=\$PATH:\$JAVA_HOME/bin
+ EOF
+ source /etc/profile.d/jdk13env.sh
+ 

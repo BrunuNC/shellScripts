@@ -33,8 +33,10 @@ dpkgInstall() {
 echo "##################################################"
 echo "Removendo travas eventuais do apt"
 echo "##################################################"
-sudo rm /var/lib/dpkg/lock-frontend
-sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/lib/dpkg/lock
+sudo apt update
+sudo apt upgrade
 
 echo "##################################################"
 echo "Instalando Programas Basicos..."
@@ -198,7 +200,7 @@ echo ""
 echo "##################################################"
 echo "Instalando IntelliJ IDEA Ultimate..."
 echo "##################################################"
-sudo snap install intellij-idea-ultimate --classic
+#sudo snap install intellij-idea-ultimate --classic
 
 echo ""
 echo ""
@@ -224,7 +226,7 @@ echo "Instalando Spotify..."
 echo "##################################################"
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update && sudo apt install spotify-client
+sudo apt update && sudo apt install spotify-client -y
 
 echo ""
 echo ""
